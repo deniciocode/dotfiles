@@ -1,0 +1,33 @@
+[user]
+  email = dennis.haegler@gmail.com
+  name = Dennis Haegler
+[push]
+  default = simple
+[merge]
+  tool = vimdiff
+[core]
+  editor = vim
+[color]
+  ui = true
+[alias]
+  br = branch
+  ci = commit -v
+  c = commit
+  cam = commit -am
+  ch = checkout
+  co = checkout
+  df = diff
+  rb = rebase
+  st = status
+  s = status
+  sa = stash
+  mt = mergetool
+  cp = cherry-pick
+  sm = submodule
+  pl = pull --rebase
+  lpo = log --pretty=oneline --abbrev-commit --graph --decorate
+  l1 = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  l2 = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  l3 = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) (%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  aa = add --all
+
