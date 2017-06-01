@@ -1,6 +1,11 @@
-export PATH="/usr/local/sbin:$PATH"
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH="$PATH:$HOME/bin"
+export PATH=$PATH:/usr/local/sbin
+export PATH=$PATH:$HOME/.rvm/bin
+export PATH=$PATH:$HOME/bin
+export NODE_PATH=$(npm root -g)
+
+export PATH="$(yarn global bin):$PATH"
+
+export GEM_HOME=$HOME/.rvm/gems
 
 # Path to your oh-my-zsh installation.
 source ~/.bash_profile
@@ -8,7 +13,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 export GOPATH=$HOME/code/gocode
 export PATH=$PATH:$GOPATH/bin
-export PGDATA="/usr/local/var/postgres"
+export PGDATA=/usr/local/var/postgres
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -92,9 +97,9 @@ alias vimconfig="vim ~/.vim/vimrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias gitconfig='vim ~/.gitconfig'
 alias vimdir="cd ~/.vim"
-alias dotfiledir="cd ~/dotfile"
 alias migrate='be rake db:migrate && RAILS_ENV=test be rake db:migrate && be rake parallel:prepare'
-alias start_docker="bash --login '/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh'"
 
+alias deploy='$HOME/code/kp/deployment/deploy_app.sh deploy'
+alias connect='$HOME/code/kp/deployment/deploy_app.sh connect'
 # added by travis gem
 [ -f /Users/dennish/.travis/travis.sh ] && source /Users/dennish/.travis/travis.sh
