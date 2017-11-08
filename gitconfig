@@ -8,6 +8,7 @@
 [core]
   editor = vim
 	excludesfile = ~/.gitignore_global
+  editor = nvim
 [color]
   ui = true
 [alias]
