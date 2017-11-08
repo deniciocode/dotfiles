@@ -63,7 +63,6 @@ ZSH_THEME="robbyrussell"
 plugins=(git bundler npm rails ruby gem docker git-extra brew brew-cask go golang rake-fast)
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/.cfb_keys.sh
 
 # User configuration
 
@@ -102,5 +101,3 @@ alias migrate='be rake db:migrate && RAILS_ENV=test be rake db:migrate && be rak
 
 alias deploy='$HOME/code/kp/deployment/deploy_app.sh deploy'
 alias connect='$HOME/code/kp/deployment/deploy_app.sh connect'
-# added by travis gem
-[ -f /Users/dennish/.travis/travis.sh ] && source /Users/dennish/.travis/travis.sh
