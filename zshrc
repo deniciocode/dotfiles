@@ -16,6 +16,9 @@ export GOPATH=$HOME/code/gocode
 export PATH=$PATH:$GOPATH/bin
 export PGDATA=/usr/local/var/postgres
 
+export VISUAL=nvim
+alias vim=nvim
+alias vi=nvim
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -98,6 +101,7 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 alias gitconfig='vim ~/.gitconfig'
 alias vimdir="cd ~/.vim"
 alias migrate='be rake db:migrate && RAILS_ENV=test be rake db:migrate && be rake parallel:prepare'
+alias gitprunemerged='git branch --merged | egrep -v "(^\*|master|staging)" | xargs git branch -d '
 
 alias deploy='$HOME/code/kp/deployment/deploy_app.sh deploy'
 alias connect='$HOME/code/kp/deployment/deploy_app.sh connect'
