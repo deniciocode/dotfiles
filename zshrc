@@ -63,7 +63,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git bundler npm rails ruby gem docker git-extra brew brew-cask go golang rake-fast)
+plugins=(git bundler npm rails ruby gem docker brew go golang)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -96,12 +96,11 @@ fi
 set -o emacs
 
 alias zshconfig="vim ~/.zshrc"
-alias vimconfig="vim ~/.vim/vimrc"
+alias vimconfig="vim ~/vimfiles/vimrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias gitconfig='vim ~/.gitconfig'
-alias vimdir="cd ~/.vim"
+alias vimdir="cd ~/vimfiles"
 alias migrate='be rake db:migrate && RAILS_ENV=test be rake db:migrate && be rake parallel:prepare'
 alias gitprunemerged='git branch --merged | egrep -v "(^\*|master|staging)" | xargs git branch -d '
 
-alias deploy='$HOME/code/kp/deployment/deploy_app.sh deploy'
-alias connect='$HOME/code/kp/deployment/deploy_app.sh connect'
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
