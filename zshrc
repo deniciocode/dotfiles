@@ -96,11 +96,10 @@ fi
 set -o emacs
 
 alias zshconfig="vim ~/.zshrc"
-alias vimconfig="vim ~/vimfiles/vimrc"
+alias vimconfig="vim ~/vimfiles/init.vim"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias gitconfig='vim ~/.gitconfig'
 alias vimdir="cd ~/vimfiles"
-alias migrate='be rake db:migrate && RAILS_ENV=test be rake db:migrate && be rake parallel:prepare'
-alias gitprunemerged='git branch --merged | egrep -v "(^\*|master|staging)" | xargs git branch -d '
+alias cat="ccat"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
