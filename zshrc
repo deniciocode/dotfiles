@@ -63,7 +63,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git bundler npm rails ruby gem docker brew go golang)
+plugins=(git bundler npm ruby gem docker brew go golang)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -76,11 +76,7 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim'
-fi
+export EDITOR='vim'
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
   val=$(defaults read -g AppleInterfaceStyle 2>/dev/null)
