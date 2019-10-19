@@ -5,6 +5,9 @@ export NODE_PATH=$(npm root -g)
 
 export PATH="$(yarn global bin):$PATH"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
+export PATH="/Users/dennis/Library/Python/4.7/bin:$PATH"
+
+export VISUAL=nvim
 
 export GEM_HOME=$HOME/.rvm/gems
 
@@ -16,9 +19,13 @@ export GOPATH=$HOME/code/gocode
 export PATH=$PATH:$GOPATH/bin
 export PGDATA=/usr/local/var/postgres
 
+export FZF_DEFAULT_COMMAND='fd --type f'
+
 export VISUAL=nvim
 alias vim=nvim
 alias vi=nvim
+
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -63,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git bundler npm ruby gem docker brew go golang)
+plugins=(git bundler npm rails ruby gem docker brew go golang)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -110,3 +117,7 @@ alias vimdir="cd ~/vimfiles"
 alias cat="ccat"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+alias cat=ccat
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
