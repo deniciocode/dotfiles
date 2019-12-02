@@ -110,6 +110,7 @@ fi
 set -o emacs
 
 alias zshconfig="vim ~/.zshrc"
+alias reloadshell='source ~/.zshrc'
 alias vimconfig="vim ~/vimfiles/init.vim"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias gitconfig='vim ~/.gitconfig'
