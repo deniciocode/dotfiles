@@ -23,6 +23,7 @@ export PATH=$PATH:$GOPATH/bin
 export PGDATA=/usr/local/var/postgres
 
 export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export VISUAL=nvim
 alias vim=nvim
@@ -87,6 +88,8 @@ export LC_ALL=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
+echo -ne "\033]50;SetProfile=Dark\a"
+export ITERM_PROFILE="Dark"
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
   val=$(defaults read -g AppleInterfaceStyle 2>/dev/null)
@@ -119,6 +122,9 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 alias gitconfig='vim ~/.gitconfig'
 alias vimdir="cd ~/vimfiles"
 alias cat="ccat"
+
+alias devrebase="git checkout develop && git pull --rebase && git checkout - && git rebase develop"
+alias gitroot='cd $(git root)'
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
