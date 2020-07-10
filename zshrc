@@ -1,11 +1,14 @@
 export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:$HOME/.rvm/bin
 export PATH=$PATH:$HOME/bin
-export NODE_PATH=$(npm root -g)
 
-export PATH="$(yarn global bin):$PATH"
+# export PATH="$(yarn global bin):$PATH"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="/Users/dennis/Library/Python/4.7/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+export NODE_PATH=$(npm root -g)
 
 export VISUAL=nvim
 
