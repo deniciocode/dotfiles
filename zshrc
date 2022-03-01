@@ -15,7 +15,6 @@ export VISUAL=nvim
 export GEM_HOME=$HOME/.rvm/gems
 
 # Path to your oh-my-zsh installation.
-source ~/.bash_profile
 export ZSH=$HOME/.oh-my-zsh
 
 export GOPATH=$HOME/code/gocode
@@ -74,7 +73,9 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git bundler npm rails ruby gem docker brew go golang)
+#
+# docker golang
+plugins=(git bundler npm rails ruby gem brew nvm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -88,18 +89,31 @@ export LC_ALL=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
-echo -ne "\033]50;SetProfile=Dark\a"
-export ITERM_PROFILE="Dark"
+
+# echo -ne "\033]50;SetProfile=Dark\a"
+# export ITERM_PROFILE="Dark"
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
+  autoswap=$(defaults read -g AppleInterfaceStyleSwitchesAutomatically 2>/dev/null)
   val=$(defaults read -g AppleInterfaceStyle 2>/dev/null)
-  if [[ $val == "Dark" ]]; then
-    echo -ne "\033]50;SetProfile=Dark\a"
-    export ITERM_PROFILE="Dark"
-  elif [[ $val == "" ]]; then
-    echo -ne "\033]50;SetProfile=Light\a"
-    export ITERM_PROFILE="Light"
-  fi
+  # if [[ $autoswap == 1 ]] then
+  #   echo 'We a at one'
+  #   if [[ $val == "Dark" ]]; then
+  #     echo -ne "\033]50;SetProfile=Light\a"
+  #     export ITERM_PROFILE="Light"
+  #   elif [[ $val == "" ]]; then
+  #     echo -ne "\033]50;SetProfile=Dark\a"
+  #     export ITERM_PROFILE="Dark"
+  #   fi
+  # else
+    if [[ $val == "Dark" ]]; then
+      echo -ne "\033]50;SetProfile=Dark\a"
+      export ITERM_PROFILE="Dark"
+    elif [[ $val == "" ]]; then
+      echo -ne "\033]50;SetProfile=Light\a"
+      export ITERM_PROFILE="Light"
+    fi
+  # fi
 fi
 
 # Compilation flags
@@ -123,11 +137,20 @@ alias gitconfig='vim ~/.gitconfig'
 alias vimdir="cd ~/vimfiles"
 alias cat="ccat"
 
+alias codedir="cd ~/code"
+
 alias devrebase="git checkout develop && git pull --rebase && git checkout - && git rebase develop"
 alias gitroot='cd $(git root)'
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 alias cat=ccat
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=/Users/dennish/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+# ~/.zshrc file for zsh non-login shells.
+# see /usr/share/doc/zsh/examples/zshrc for examples
