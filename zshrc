@@ -1,18 +1,22 @@
 export PATH=$PATH:/usr/local/sbin
-export PATH=$PATH:$HOME/.rvm/bin
 export PATH=$PATH:$HOME/bin
 
 # export PATH="$(yarn global bin):$PATH"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="/Users/dennis/Library/Python/4.7/bin:$PATH"
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
+export PYTHON=/usr/local/opt/python/libexec/bin/python
+
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-export NODE_PATH=$(npm root -g)
+export NODE_PATH=$(npm root --location=global)
 
 export VISUAL=nvim
-
-export GEM_HOME=$HOME/.rvm/gems
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -27,6 +31,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export VISUAL=nvim
 alias vim=nvim
 alias vi=nvim
+alias python2=python
 
 
 # Set name of the theme to load.
@@ -140,9 +145,6 @@ alias cat="ccat"
 alias codedir="cd ~/code"
 
 alias devrebase="git checkout develop && git pull --rebase && git checkout - && git rebase develop"
-alias gitroot='cd $(git root)'
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 alias cat=ccat
 export NVM_DIR="$HOME/.nvm"
