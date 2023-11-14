@@ -28,17 +28,13 @@ export PGDATA=/usr/local/var/postgres
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-export VISUAL=nvim
-alias vim=nvim
-alias vi=nvim
-alias python2=python
 
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="robbyrussell" # set by `omz`
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -80,7 +76,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 #
 # docker golang
-plugins=(git bundler npm rails ruby gem brew nvm)
+plugins=(git bundler npm rails ruby gem brew nvm rbenv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -134,13 +130,17 @@ fi
 
 set -o emacs
 
-alias zshconfig="vim ~/.zshrc"
-alias reloadshell='source ~/.zshrc'
-alias vimconfig="vim ~/vimfiles/init.vim"
-alias ohmyzsh="vim ~/.oh-my-zsh"
-alias gitconfig='vim ~/.gitconfig'
-alias vimdir="cd ~/vimfiles"
 alias cat="ccat"
+alias gitconfig='vim ~/.gitconfig'
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias python2=python
+alias reloadshell='source ~/.zshrc'
+alias vi=nvim
+alias vim=nvim
+alias vimconfig="vim ~/vimfiles/init.vim"
+alias vimmappings="vim ~/vimfiles/lua/mappings.lua"
+alias vimdir="cd ~/vimfiles"
+alias zshconfig="vim ~/.zshrc"
 
 alias codedir="cd ~/code"
 
@@ -156,3 +156,4 @@ export NVM_DIR="$HOME/.nvm"
 HEROKU_AC_ZSH_SETUP_PATH=/Users/dennish/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 # ~/.zshrc file for zsh non-login shells.
 # see /usr/share/doc/zsh/examples/zshrc for examples
+eval "$(rbenv init - zsh)"
