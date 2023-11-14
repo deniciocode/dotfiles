@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+# cp ./auto_switch_theme.py ~/Library/Application\ Support/iTerm2/Scripts/AutoLaunch/auto_switch_theme.py
 import asyncio
 import iterm2
 
