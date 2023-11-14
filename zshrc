@@ -91,32 +91,6 @@ export LC_ALL=en_US.UTF-8
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
 
-# echo -ne "\033]50;SetProfile=Dark\a"
-# export ITERM_PROFILE="Dark"
-
-if [[ "$(uname -s)" == "Darwin" ]]; then
-  autoswap=$(defaults read -g AppleInterfaceStyleSwitchesAutomatically 2>/dev/null)
-  val=$(defaults read -g AppleInterfaceStyle 2>/dev/null)
-  # if [[ $autoswap == 1 ]] then
-  #   echo 'We a at one'
-  #   if [[ $val == "Dark" ]]; then
-  #     echo -ne "\033]50;SetProfile=Light\a"
-  #     export ITERM_PROFILE="Light"
-  #   elif [[ $val == "" ]]; then
-  #     echo -ne "\033]50;SetProfile=Dark\a"
-  #     export ITERM_PROFILE="Dark"
-  #   fi
-  # else
-    if [[ $val == "Dark" ]]; then
-      echo -ne "\033]50;SetProfile=Dark\a"
-      export ITERM_PROFILE="Dark"
-    elif [[ $val == "" ]]; then
-      echo -ne "\033]50;SetProfile=Light\a"
-      export ITERM_PROFILE="Light"
-    fi
-  # fi
-fi
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
