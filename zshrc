@@ -9,8 +9,7 @@ export PATH="$GOPATH/bin:$PATH"
 export PYTHON=/usr/local/opt/python/libexec/bin/python
 
 # Set environment variables for NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+export NVM_DIR="$HOME/.nvm" && [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 
 # Set Node.js global bin path
 export NODE_PATH=$(npm root --global)
