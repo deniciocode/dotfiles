@@ -25,7 +25,7 @@ export VISUAL=nvim
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
 # Set the preferred editor
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # Set the language environment
 export LANG=en_US.UTF-8
@@ -58,16 +58,15 @@ source $ZSH/oh-my-zsh.sh
 
 # Custom aliases
 alias cat="ccat"
-alias gitconfig='vim ~/.gitconfig'
-alias ohmyzsh="vim ~/.oh-my-zsh"
+alias gitconfig='nvim ~/.gitconfig'
+alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias python2=python
+alias vim='nvim'
 alias reloadshell='source ~/.zshrc'
-alias vi=nvim
-alias vim=nvim
-alias vimconfig="vim ~/vimfiles/init.lua"
-alias vimmappings="vim ~/vimfiles/lua/mappings.lua"
+alias vimconfig="nvim ~/vimfiles/init.lua"
+alias vimmappings="nvim ~/vimfiles/lua/mappings.lua"
 alias vimdir="cd ~/vimfiles"
-alias zshconfig="vim ~/.zshrc"
+alias zshconfig="nvim ~/.zshrc"
 alias codedir="cd ~/code"
 alias devrebase="git checkout develop && git pull --rebase && git checkout - && git rebase develop"
 alias cat=ccat
