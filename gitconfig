@@ -16,6 +16,7 @@
   ci = commit -v
   co = checkout
   df = diff
+  di = diff
   rb = rebase
   st = status
   sa = stash
