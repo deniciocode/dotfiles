@@ -8,7 +8,7 @@ export PATH="$GOPATH/bin:$PATH"
 # Set Python executable
 export PYTHON=/usr/local/opt/python/libexec/bin/python
 
-# Set environment variables for NVM
+# Set NVM initialization in one line
 export NVM_DIR="$HOME/.nvm" && [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 
 # Set Node.js global bin path
@@ -40,9 +40,6 @@ export GOPATH=$HOME/code/gocode
 
 # Set PostgreSQL data directory
 export PGDATA=/usr/local/var/postgres
-
-# Set NVM initialization in one line
-export NVM_DIR="$HOME/.nvm" && [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 
 # Set RBENV initialization
 eval "$(rbenv init - zsh)"
