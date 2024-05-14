@@ -70,3 +70,4 @@ alias cat=ccat
 
 # Load FZF if available
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(fzf --zsh)"
