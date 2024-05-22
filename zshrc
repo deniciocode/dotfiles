@@ -61,13 +61,11 @@ alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias python2=python
 alias vim='nvim'
 alias reloadshell='source ~/.zshrc'
-alias vimconfig="nvim ~/vimfiles/init.lua"
-alias vimmappings="nvim ~/vimfiles/lua/mappings.lua"
-alias vimdir="cd ~/vimfiles"
 alias zshconfig="nvim ~/.zshrc"
 alias codedir="cd ~/code"
 alias devrebase="git checkout develop && git pull --rebase && git checkout - && git rebase develop"
 alias cat=ccat
+alias lgit=lazygit
 
 # Load FZF if available
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
