@@ -42,6 +42,7 @@ export GOPATH=$HOME/code/gocode
 export PGDATA=/usr/local/var/postgres
 
 # Set RBENV initialization
+export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - zsh)"
 
 # Set Heroku autocomplete setup
