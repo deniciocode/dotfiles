@@ -22,3 +22,5 @@
   sa = stash
   mt = mergetool
   pl = pull --rebase
+[pull]
+  rebase = true
