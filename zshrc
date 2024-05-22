@@ -9,7 +9,8 @@ export PATH="$GOPATH/bin:$PATH"
 export PYTHON=/usr/local/opt/python/libexec/bin/python
 
 # Set NVM initialization in one line
-export NVM_DIR="$HOME/.nvm" && [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 
 # Set Node.js global bin path
 export NODE_PATH=$(npm root --global)
