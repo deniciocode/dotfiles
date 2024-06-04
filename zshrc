@@ -68,6 +68,7 @@ alias devrebase="git checkout develop && git pull --rebase && git checkout - && 
 alias cat=ccat
 alias lgit=lazygit
 alias bup="brew update && brew upgrade"
+alias bcl="brew cleanup"
 
 # Load FZF if available
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
