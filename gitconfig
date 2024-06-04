@@ -6,21 +6,39 @@
 [merge]
   tool = vimdiff
 [core]
-  editor = vim
-	excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore_global
   editor = nvim
 [color]
   ui = true
 [alias]
+  aa = add --all
   br = branch
+  cam = commit -am
   ci = commit -v
+  c = commit -v
+  cia = commit -va
   co = checkout
+  cp = cherry-pick
   df = diff
-  di = diff
-  rb = rebase
-  st = status
-  sa = stash
   mt = mergetool
   pl = pull --rebase
+  ps = push
+  psh = push
+  pfw = push --force-with-lease
+  pshwl = push --force-with-lease
+  rb = rebase
+  rbi = rebase -i
+  root = rev-parse --show-toplevel
+  rs = restore
+  s = status
+  sa = stash
+  sm = submodule
+  st = status
+  si = switch
+  sw = switch
+[pager]
+	branch = false
+[init]
+	defaultBranch = main
 [pull]
-  rebase = true
+	rebase = true
