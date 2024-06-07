@@ -25,7 +25,7 @@
   ps = push
   psh = push
   pfw = push --force-with-lease
-  pshwl = push --force-with-lease
+  pswl = push --force-with-lease
   rb = rebase
   rbi = rebase -i
   root = rev-parse --show-toplevel
