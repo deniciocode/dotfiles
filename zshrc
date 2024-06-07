@@ -73,3 +73,4 @@ alias bcl="brew cleanup"
 # Load FZF if available
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(fzf --zsh)"
+export PATH="/usr/local/sbin:$PATH"
