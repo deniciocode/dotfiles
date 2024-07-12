@@ -1,9 +1,9 @@
 #!/bin/bash
 echo "Hello World"
 
-ln -s ~/dotfiles/gitconfig ~/.gitconfig
-ln -s ~/dotfiles/gitignore ~/.gitignore
-ln -s ~/dotfiles/zshrc ~/.zshrc
+ln -s $(pwd)/gitconfig ~/.gitconfig
+ln -s $(pwd)/gitignore ~/.gitignore
+ln -s $(pwd)/zshrc ~/.zshrc
 
-# mkdir ~/Library/Application\ Support/iTerm2/Scripts/AutoLaunch
-# cp ./auto_switch_theme.py ~/Library/Application\ Support/iTerm2/Scripts/AutoLaunch/auto_switch_theme.py
+mkdir ~/Library/Application\ Support/iTerm2/Scripts/AutoLaunch
+ln -s $(pwd)/auto_switch_theme.py ~/Library/Application\ Support/iTerm2/Scripts/AutoLaunch/auto_switch_theme.py
