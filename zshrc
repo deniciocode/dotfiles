@@ -52,7 +52,7 @@ HEROKU_AC_ZSH_SETUP_PATH=/Users/dennish/Library/Caches/heroku/autocomplete/zsh_s
 # Load oh-my-zsh
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell" # You can change this theme if needed
-plugins=(git bundler npm rails ruby gem brew nvm rbenv)
+plugins=(brew git bundler npm rails ruby gem nvm rbenv)
 source $ZSH/oh-my-zsh.sh
 
 # Custom aliases
