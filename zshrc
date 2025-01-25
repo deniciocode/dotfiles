@@ -56,19 +56,18 @@ plugins=(brew git bundler npm rails ruby gem nvm rbenv)
 source $ZSH/oh-my-zsh.sh
 
 # Custom aliases
-alias cat="ccat"
-alias gitconfig='nvim ~/.gitconfig'
-alias ohmyzsh="nvim ~/.oh-my-zsh"
-alias python2=python
-alias vim='nvim'
-alias rlsh='source ~/.zshrc'
-alias zshconfig="nvim ~/.zshrc"
+alias bcl="brew cleanup"
+alias bup="brew update && brew upgrade"
+alias cat=ccat
 alias codedir="cd ~/code"
 alias devrebase="git checkout develop && git pull --rebase && git checkout - && git rebase develop"
-alias cat=ccat
+alias gitconfig='nvim ~/.gitconfig'
 alias lgit=lazygit
-alias bup="brew update && brew upgrade"
-alias bcl="brew cleanup"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
+alias python2=python
+alias rlsh='source ~/.zshrc'
+alias vim='nvim'
+alias zshconfig="nvim ~/.zshrc"
 
 # Load FZF if available
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
