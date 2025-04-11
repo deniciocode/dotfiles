@@ -1,15 +1,28 @@
-[user]
-  email = dennis.haegler@gmail.com
-  name = Dennis Haegler
-[push]
-  default = simple
-[merge]
-  tool = vimdiff
+[branch]
+	sort = -committerdate
+[color]
+  ui = auto
+[column]
+	ui = auto
 [core]
   excludesfile = ~/.gitignore_global
   editor = nvim
-[color]
-  ui = true
+[user]
+  email = dennis.haegler@gmail.com
+  name = Dennis Haegler
+[merge]
+  tool = vimdiff
+[pager]
+	branch = false
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+[push]
+  default = simple
+[fetch]
+  prune = true
+  pruneTags = true
 [alias]
   aa = add --all
   br = branch
@@ -36,9 +49,5 @@
   st = status
   si = switch
   sw = switch
-[pager]
-	branch = false
-[init]
-	defaultBranch = main
-[pull]
-	rebase = true
+[diff]
+	algorithm = histogram
