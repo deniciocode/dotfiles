@@ -68,3 +68,4 @@ alias zshconfig="nvim ~/.zshrc"
 
 # Load FZF
 eval "$(fzf --zsh)"
+export PATH="$HOME/.local/bin:$PATH"
