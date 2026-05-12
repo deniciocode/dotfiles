@@ -97,8 +97,28 @@ DOTFILES=$(pwd)
 
 info "Installing dotfiles from $DOTFILES"
 
+if ! command -v brew >/dev/null 2>&1; then
+  info "Homebrew not found — installing"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  if [ -x /opt/homebrew/bin/brew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  elif [ -x /usr/local/bin/brew ]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+  fi
+else
+  success "Homebrew already installed"
+fi
+
 link_file "$DOTFILES/gitconfig" "$HOME/.gitconfig"
 link_file "$DOTFILES/gitignore" "$HOME/.gitignore_global"
 link_file "$DOTFILES/zshrc" "$HOME/.zshrc"
 
 clone_repo "https://github.com/deniciocode/neovim" "$HOME/.config/nvim"
+
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  info "Oh My Zsh not found — installing"
+  RUNZSH=no CHSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+else
+  success "Oh My Zsh already installed"
+fi
