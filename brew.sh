@@ -14,8 +14,18 @@ error() {
   exit 1
 }
 
-command -v brew >/dev/null 2>&1 || error "Homebrew not found. Install from https://brew.sh first."
+if ! command -v brew >/dev/null 2>&1; then
+  info "Homebrew not found — installing"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+  if [ -x /opt/homebrew/bin/brew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  elif [ -x /usr/local/bin/brew ]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+  fi
+fi
+
+brews=(neovim rbenv nvm jq git lazygit wget htop curl)
 casks=(claude todoist)
 
 ask_yn() {
@@ -66,10 +76,14 @@ choose_single "rectangle" "rectangle"
 choose_single "postgres.app" "postgres-app"
 choose_single "alfred" "alfred"
 
-info "Installing ${#casks[@]} casks via brew bundle"
+info "Installing ${#brews[@]} formulae and ${#casks[@]} casks via brew bundle"
 
 brewfile=$(mktemp)
 trap 'rm -f "$brewfile"' EXIT
+for b in "${brews[@]}"; do
+  echo "brew \"$b\"" >>"$brewfile"
+done
+echo 'brew "libpq", link: true' >>"$brewfile"
 for c in "${casks[@]}"; do
   echo "cask \"$c\"" >>"$brewfile"
 done
