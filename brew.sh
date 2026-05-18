@@ -25,7 +25,7 @@ if ! command -v brew >/dev/null 2>&1; then
   fi
 fi
 
-brews=(neovim rbenv nvm jq git lazygit wget htop curl)
+brews=(neovim rbenv nvm jq git lazygit wget htop curl fzf)
 casks=(claude todoist)
 
 ask_yn() {
@@ -67,7 +67,7 @@ info "Selecting GUI apps to install"
 choose_multi "Browsers" "brave:brave-browser" "firefox:firefox" "chrome:google-chrome"
 choose_multi "Terminals" "iterm2:iterm2" "ghostty:ghostty" "alacritty:alacritty"
 choose_multi "Password managers" "1password:1password" "bitwarden:bitwarden" "protonpass:proton-pass"
-choose_multi "Communication" "zoom:zoom" "slack:slack"
+choose_multi "Communication" "zoom:zoom" "slack:slack" "teams:microsoft-teams"
 
 info "Other apps"
 choose_single "tableplus" "tableplus"
