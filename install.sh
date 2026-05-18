@@ -114,6 +114,9 @@ link_file "$DOTFILES/gitconfig" "$HOME/.gitconfig"
 link_file "$DOTFILES/gitignore" "$HOME/.gitignore_global"
 link_file "$DOTFILES/zshrc" "$HOME/.zshrc"
 
+mkdir -p "$HOME/.config/ghostty"
+link_file "$DOTFILES/ghostty/config" "$HOME/.config/ghostty/config"
+
 clone_repo "https://github.com/deniciocode/neovim" "$HOME/.config/nvim"
 
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
