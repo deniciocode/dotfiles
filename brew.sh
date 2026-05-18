@@ -76,6 +76,11 @@ choose_single "rectangle" "rectangle"
 choose_single "postgres.app" "postgres-app"
 choose_single "alfred" "alfred"
 
+info "CLI tools"
+if ask_yn "install claude-code?"; then
+  brews+=(claude-code)
+fi
+
 info "Installing ${#brews[@]} formulae and ${#casks[@]} casks via brew bundle"
 
 brewfile=$(mktemp)
