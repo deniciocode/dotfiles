@@ -125,3 +125,46 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
 else
   success "Oh My Zsh already installed"
 fi
+
+ask_yn() {
+  local prompt=$1
+  local yn
+  while true; do
+    read -r -p "  $prompt [y/N] " yn
+    case "$yn" in
+    y | Y) return 0 ;;
+    n | N | "") return 1 ;;
+    *) echo "  Please answer y or n." ;;
+    esac
+  done
+}
+
+import_rectangle_config() {
+  if ! command -v jq >/dev/null 2>&1; then
+    warn "jq not found — skipping Rectangle config import (run brew.sh first)"
+    return
+  fi
+
+  osascript -e 'quit app "Rectangle"' 2>/dev/null || true
+
+  jq -r '.defaults | to_entries[] | .key as $k | .value | to_entries[0] | "\($k)\t\(.key)\t\(.value)"' \
+    "$DOTFILES/rectangle_config.json" |
+    while IFS=$'\t' read -r key type value; do
+      case "$type" in
+      bool) defaults write com.knollsoft.Rectangle "$key" -bool "$value" ;;
+      int) defaults write com.knollsoft.Rectangle "$key" -int "$value" ;;
+      float) defaults write com.knollsoft.Rectangle "$key" -float "$value" ;;
+      string) defaults write com.knollsoft.Rectangle "$key" -string "$value" ;;
+      data) defaults write com.knollsoft.Rectangle "$key" -data "$value" ;;
+      *) warn "unknown type '$type' for key '$key'" ;;
+      esac
+    done
+
+  killall cfprefsd 2>/dev/null || true
+  success "Imported Rectangle config"
+}
+
+info "Optional config imports"
+if ask_yn "import Rectangle config?"; then
+  import_rectangle_config
+fi
