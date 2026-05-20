@@ -80,6 +80,9 @@ info "CLI tools"
 if ask_yn "install claude-code?"; then
   brews+=(claude-code)
 fi
+if ask_yn "install redis?"; then
+  brews+=(redis)
+fi
 
 info "Installing ${#brews[@]} formulae and ${#casks[@]} casks via brew bundle"
 
