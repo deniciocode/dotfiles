@@ -114,8 +114,9 @@ link_file "$DOTFILES/gitconfig" "$HOME/.gitconfig"
 link_file "$DOTFILES/gitignore" "$HOME/.gitignore_global"
 link_file "$DOTFILES/zshrc" "$HOME/.zshrc"
 
-mkdir -p "$HOME/.config/ghostty"
+mkdir -p "$HOME/.config/ghostty/themes"
 link_file "$DOTFILES/ghostty/config" "$HOME/.config/ghostty/config"
+link_file "$DOTFILES/ghostty/themes/everforest-light" "$HOME/.config/ghostty/themes/everforest-light"
 
 clone_repo "https://github.com/deniciocode/neovim" "$HOME/.config/nvim"
 
