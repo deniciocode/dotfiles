@@ -25,7 +25,7 @@ if ! command -v brew >/dev/null 2>&1; then
   fi
 fi
 
-brews=(neovim rbenv nvm jq git lazygit wget htop curl fzf)
+brews=(neovim rbenv nvm jq git lazygit wget htop curl fzf ripgrep fd)
 casks=(claude todoist)
 
 ask_yn() {
