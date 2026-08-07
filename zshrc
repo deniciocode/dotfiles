@@ -14,7 +14,7 @@ export PYTHON=/usr/local/opt/python/libexec/bin/python
 
 # Set NVM initialization
 export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh" --no-use  # Lazy-load nvm
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
 
 # Set color preferences for ls
 export CLICOLOR=1
@@ -49,7 +49,7 @@ HEROKU_AC_ZSH_SETUP_PATH=/Users/dennish/Library/Caches/heroku/autocomplete/zsh_s
 # Load oh-my-zsh
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell" # You can change this theme if needed
-plugins=(git rails)
+plugins=(git rails brew)
 source $ZSH/oh-my-zsh.sh
 
 # Custom aliases
